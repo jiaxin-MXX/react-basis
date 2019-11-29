@@ -20,7 +20,7 @@ class List extends Component {
         this.state.list.splice(index,1)
         this.setState({})
     }
-    // 对贡献的测试2
+    // 对贡献的测试3
     render(){
         return (
             <ul>
