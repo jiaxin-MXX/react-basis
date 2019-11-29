@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-
+import Item from './item'
 class List extends Component {
     state={
         list:['task1','task2']
@@ -26,7 +26,7 @@ class List extends Component {
                 {
                    this.state.list.map((value,index)=>{
                         return (
-                        <li key={value+index}>{value}<button onClick={this.click.bind(this,index)}>X</button></li>
+                            <Item key={value+index} value={value} index={index} onItemClick={this.click.bind(this,index)}></Item>
                         )
                    })
                 }
