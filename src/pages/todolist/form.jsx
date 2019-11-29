@@ -1,26 +1,31 @@
-import React,{ Component } from 'react'
+import React,{ Component,createRef} from 'react'
 
 class From extends Component {
+    constructor(){
+        super()
+        this.inputvalue=createRef()
+    }
     state={
         keyword:''
     }
-    handlechange(e){
-       this.setState({
-        keyword : e.target.value
-       })
-    }
+    // handlechange(e){
+    //    this.setState({
+    //     keyword : e.target.value
+    //    })
+    // }
     keyup(e){
         if(e.keyCode===13){
+            let value=this.inputvalue.current.value
             // console.log(this.state.keyword)
-            this.props.onkeyword(this.state.keyword)
-            this.setState({
-                keyword:''
-            })
+            this.props.onkeyword(value)
+            this.inputvalue.current.value=' '
         }
     }
     render(){
         return (
-            <input value={this.state.keyword} onKeyUp={this.keyup.bind(this)} onChange = {this.handlechange.bind(this)} type='text'/>
+            <input ref={this.inputvalue} onKeyUp={(e)=>{
+                this.keyup(e)
+            }} type='text'/>
         )
     }
 }
