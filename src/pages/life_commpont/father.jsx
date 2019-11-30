@@ -7,13 +7,19 @@ class father extends Component {
     }
     render(){
         return (
-           <Child isShow={this.state.isShow} value={this.state.value}></Child>
+           <Child isShow={this.state.isShow} ></Child>
         );
     }
-    componentDidMount(){
-        this.setState({
-            isShow:true
-        })
+    async componentDidMount(){
+        console.log('PPPPPP')
+        // await this.setState({
+        //     isShow:false
+        // })
+        setTimeout(()=>{
+            this.setState({
+                isShow:false
+            })
+        },0)
     }
     
 }
