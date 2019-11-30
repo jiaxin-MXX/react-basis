@@ -5,7 +5,8 @@ import ReactDom from "react-dom";
 // import Footer from './pages/food.jsx'
 // import {Nav} from './pages/nav.jsx'
 
-import Todolist from './pages/todolist/todolist'
+// import Todolist from './pages/todolist/todolist'
+import Todolist from './pages/life_commpont/father'
 ReactDom.render(
     <>
         <Todolist></Todolist>
