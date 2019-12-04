@@ -41,11 +41,22 @@ import store from './pages/redux/contenr/store'
 //     </>,
 //     document.getElementById('root')
 // )
-import Child from './pages/react-redux/child'
-import {Provider} from 'react-redux'
+// import Child from './pages/react-redux/child'
+// import {Provider} from 'react-redux'
+// ReactDom.render(
+//     <Provider store={store}>
+//         <Child></Child>
+//     </Provider>,
+//     document.getElementById('root')
+// )
+
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import Index from './pages/router/Index'
+
 ReactDom.render(
-    <Provider store={store}>
-        <Child></Child>
-    </Provider>,
-    document.getElementById('root')
+  <Router>
+    <Index></Index>
+  </Router>,
+  document.getElementById('root')
 )
