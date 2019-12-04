@@ -1,0 +1,16 @@
+const { createStore,bindActionCreators}=require('redux')
+const reducer= require('./combine')
+const store = createStore(reducer)
+const add=require('../action_creator/add')
+const counterCreator=require('../action_creator/load')
+console.log(store)
+store.subscribe(()=>{
+    console.log(store.getState())
+})
+
+store.dispatch(add())
+let bac=bindActionCreators(counterCreator,store.dispatch)
+// store.dispatch(load())
+// store.dispatch(add2())
+console.log(counterCreator)
+console.log(bac)

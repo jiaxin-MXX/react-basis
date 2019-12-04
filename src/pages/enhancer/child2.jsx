@@ -6,7 +6,7 @@ class child2 extends Component {
         item2:'list2 item',
     }
     render() {
-        console.log(this.props)
+        
         return (
             <>  <h3>高阶组件</h3>
                 <div>

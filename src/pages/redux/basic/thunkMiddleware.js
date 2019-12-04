@@ -1,0 +1,28 @@
+// function createThunkMiddleware(extraArgument) {
+//     return ({ dispatch, getState }) => next => action => {
+//       if (typeof action === 'function') {
+//         return action(dispatch, getState, extraArgument);
+//       }
+  
+//       return next(action);
+//     };
+// }
+  
+
+
+function createThunkMiddleware(extraArgument){
+    return ({dispatch,getState})=>{
+        return (next)=>{
+           
+            return (action)=>{
+                // console.log(action)
+                if(typeof action==='function'){
+                    return action(dispatch,getState,extraArgument)
+                }
+                return next(action)
+            }
+        }
+    }
+}
+const thunk = createThunkMiddleware();
+module.exports=thunk;
