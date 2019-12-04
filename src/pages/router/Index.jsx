@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Move from './move'
 import Tv from './tv'
+import Page404 from './404.jsx'
 import './active.css'
 class Index extends Component {
     render() {
@@ -14,10 +15,10 @@ class Index extends Component {
             <div>
                 <ul>
                     <li>
-                        <NavLink activeClassName='active' to='move'>电影</NavLink>
+                        <NavLink activeClassName='active' to='/move'>电影</NavLink>
                     </li>
                     <li>
-                        <NavLink to='tv'>电视</NavLink>
+                        <NavLink to='/tv'>电视</NavLink>
                     </li>
                 </ul>
                 <Switch>
@@ -30,8 +31,13 @@ class Index extends Component {
                         component={Tv}
                     />
                     <Redirect
+                        exact
                         from='/'
                         to='/move'
+                    />
+                    <Route
+                        path='*'
+                        component={Page404}
                     />
                 </Switch>
             </div>
